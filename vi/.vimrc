@@ -45,6 +45,9 @@ set showcmd	"show last command in bottom bar
 " Key Mapping
 :imap jj <Esc>
 
+"" Remap redo to ALT+r because CTRL+r is a useful msft vs command.
+nnoremap <A-u> <C-r>
+
 " Searching
 set incsearch
 set hlsearch
