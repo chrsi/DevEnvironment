@@ -68,8 +68,8 @@ nnoremap B ^
 nnoremap E $
 
 " Delete lines above/below current line with CTRL
-nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><Alt-Shift-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><Alt-Shift-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
 
 " Insert lines above/below current line with ALT
 nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
