@@ -1,3 +1,23 @@
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval `ssh-agent` > /dev/null
+fi
+
+# Custom Alias
+alias g='git'
+alias gs='git status'
+alias gai='git add -i'
+alias glc='git log --format="%h" -n 1 | cat'
+alias w='cmd.exe /C start'
+alias npp='/mnt/c/Program\ Files/Notepad++/notepad++.exe'
+alias c='clip'
+
+function clip(){
+  $1 | clip.exe
+}
+
+# Navigation
+alias dev='cd $dev'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,15 +27,8 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
-#ZSH_THEME="robbyrussel"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,11 +72,10 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.nvm/nvm.sh
 
 # User configuration
 
@@ -94,6 +106,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export dev="/mnt/c/dev"
+export winhome="/mnt/c/Users/christian.siber"
+export desktop="/mnt/c/Users/christian.siber/Desktop"
+export dl="/mnt/c/Users/christian.siber/Downloads"
+export ANDROID_HOME="/mnt/c/Program\ Files\ \(x86\)/Android/android-sdk"
+export PATH=/mnt/c/Users/christian.siber/.npm/bin:~/.npm-global/bin:~/bin/:$ANDROID_HOME:$PATH
 
-#BASE16_SHELL=$HOME/.config/base16-shell/
-#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# Set NVM environment
+npm config delete prefix
+nvm use 8.11.1 > /dev/null
+npm config set prefix '~/.npm-global'
+
+umask 002
