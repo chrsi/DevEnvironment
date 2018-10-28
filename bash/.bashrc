@@ -134,11 +134,3 @@ fi
 #export LS_COLORS
 
 #PS1='\e[37;1m\u@\e[35m\W\e[0m\$ ' # this will change your prompt format
-
-# environment variables
-export WIN_HOME="/mnt/c/Users/christian.siber"
-export DEV="/mnt/c/dev/"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
